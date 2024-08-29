@@ -1,0 +1,124 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. John Smith",
+        "subject": "Introduction to Computer Science",
+        "stars": 4,
+        "review": "Great professor! Makes complex topics easy to understand, but the exams are tough."
+      },
+      {
+        "professor": "Dr. Emily Johnson",
+        "subject": "Organic Chemistry",
+        "stars": 2,
+        "review": "Very knowledgeable, but her lectures are hard to follow and the grading is strict."
+      },
+      {
+        "professor": "Dr. Michael Brown",
+        "subject": "Calculus I",
+        "stars": 5,
+        "review": "Amazing teacher! Clear explanations and very approachable for extra help."
+      },
+      {
+        "professor": "Dr. Sarah Davis",
+        "subject": "Modern History",
+        "stars": 3,
+        "review": "Good lectures, but relies heavily on textbook reading. Not very engaging."
+      },
+      {
+        "professor": "Dr. David Wilson",
+        "subject": "Microeconomics",
+        "stars": 4,
+        "review": "Challenging course, but he provides plenty of resources and is very helpful."
+      },
+      {
+        "professor": "Dr. Jennifer Moore",
+        "subject": "Introduction to Psychology",
+        "stars": 1,
+        "review": "Lectures are boring and repetitive. Doesn't seem interested in teaching."
+      },
+      {
+        "professor": "Dr. Robert Taylor",
+        "subject": "Physics II",
+        "stars": 5,
+        "review": "Engaging lecturer with a passion for the subject. Makes physics fun!"
+      },
+      {
+        "professor": "Dr. Mary Anderson",
+        "subject": "Creative Writing",
+        "stars": 3,
+        "review": "Encourages creativity but gives vague feedback on assignments."
+      },
+      {
+        "professor": "Dr. Christopher Thomas",
+        "subject": "Introduction to Sociology",
+        "stars": 4,
+        "review": "Interesting lectures and fair grading. A good choice for an intro course."
+      },
+      {
+        "professor": "Dr. Patricia Martinez",
+        "subject": "Biology 101",
+        "stars": 2,
+        "review": "Course is disorganized and lectures lack depth. Labs are better."
+      },
+      {
+        "professor": "Dr. Linda Jackson",
+        "subject": "American Literature",
+        "stars": 5,
+        "review": "Passionate about literature and fosters great class discussions."
+      },
+      {
+        "professor": "Dr. Barbara White",
+        "subject": "Environmental Science",
+        "stars": 4,
+        "review": "Informative and enthusiastic, but the workload is heavy."
+      },
+      {
+        "professor": "Dr. James Harris",
+        "subject": "Introduction to Philosophy",
+        "stars": 1,
+        "review": "Monotonous lectures, and the exams are very difficult."
+      },
+      {
+        "professor": "Dr. Karen Lewis",
+        "subject": "Statistics for Social Sciences",
+        "stars": 3,
+        "review": "Good explanations, but moves through material too quickly."
+      },
+      {
+        "professor": "Dr. Steven Walker",
+        "subject": "World Politics",
+        "stars": 5,
+        "review": "Engaging, knowledgeable, and presents a balanced view of global issues."
+      },
+      {
+        "professor": "Dr. Nancy Hall",
+        "subject": "Introduction to Art History",
+        "stars": 2,
+        "review": "Slides are outdated, and the class lacks structure."
+      },
+      {
+        "professor": "Dr. Kevin Young",
+        "subject": "Data Structures and Algorithms",
+        "stars": 4,
+        "review": "Challenging but rewarding. He is always available for extra help."
+      },
+      {
+        "professor": "Dr. Laura King",
+        "subject": "Macroeconomics",
+        "stars": 3,
+        "review": "Decent lectures, but the exams are more challenging than expected."
+      },
+      {
+        "professor": "Dr. Daniel Wright",
+        "subject": "Human Anatomy",
+        "stars": 5,
+        "review": "Very thorough and passionate about the subject. Excellent lab sessions."
+      },
+      {
+        "professor": "Dr. Susan Lopez",
+        "subject": "Linear Algebra",
+        "stars": 2,
+        "review": "Material is not well-organized, and the pace is too fast."
+      }
+    ]
+  }
