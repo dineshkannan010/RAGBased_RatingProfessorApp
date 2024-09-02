@@ -1,8 +1,83 @@
-import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.common.by import By
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import json
+import time
+
+# Setup Firefox options
+options = FirefoxOptions()
+options.headless = True  # Run headless browser
+options.accept_insecure_certs = True  # Bypass SSL certificate errors
+
+# Setup Chrome driver
+driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+url = "https://www.ratemyprofessors.com/search/professors/685?q=*"
+driver.get(url)
+
+all_professors = []
+
+# Function to load all professor cards by clicking "Show More"
+def load_all_professors():
+    while True:
+        try:
+            # Wait up to 10 seconds for the "Show More" button to be visible
+            show_more_button = WebDriverWait(driver, 10).until(
+                EC.visibility_of_element_located((By.XPATH, '//button[text()="Show More"]'))
+            )
+            driver.execute_script("arguments[0].click();", show_more_button)
+            time.sleep(2)  # Short wait for more professors to load after clicking
+        except Exception as e:
+            print(f"No more 'Show More' button found or error occurred: {e}")
+            break
+
 def web_scrapping(url):
-    response=requests.get(url)
-    if response.status_code != 200:
-        raise Exception(f"Failed to fetch data from {url}")
-    
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    prof_cards = soup.find_all('a', class_='TeacherCard__StyledTeacherCard-syjs0d-0')
+
+    for card in prof_cards:
+        try:
+            professor = card.find('div', class_='CardName__StyledCardName-sc-1gyrgim-0').text.strip()
+            subject = card.find('div', class_='CardSchool__Department-sc-19lmz2k-0').text.strip()
+            school = card.find('div', class_='CardSchool__School-sc-19lmz2k-1').text.strip()
+            stars = card.find('div', class_='CardNumRating__CardNumRatingNumber-sc-17t4b9u-2').text.strip()
+            num_ratings = card.find('div', class_='CardNumRating__CardNumRatingCount-sc-17t4b9u-3').text.strip()
+            would_take_again = card.find('div', class_='CardFeedback__CardFeedbackNumber-lq6nix-2').text.strip()
+            difficulty = card.find_all('div', class_='CardFeedback__CardFeedbackNumber-lq6nix-2')[1].text.strip()
+
+            # Add the professor details to the list
+            all_professors.append({
+                "name": professor,
+                "department": subject,
+                "school": school,
+                "stars": stars,
+                "num_ratings": num_ratings,
+                "would_take_again": would_take_again,
+                "difficulty": difficulty
+            })
+        except AttributeError as e:
+            print(f"An element was not found. Skipping a professor card: {e}")
+
+    return all_professors
+
+# Load all professors
+load_all_professors()
+
+# Scrape the professor data
+all_professors = web_scrapping(driver)
+
+# Output file path
+output_file = '../professors.json'
+
+# Write the results to a JSON file
+with open(output_file, 'w') as f:
+    json.dump(all_professors, f, indent=4)
+
+print(f'Successfully scraped {len(all_professors)} professors and saved to {output_file}')
+
+# Quit the driver
+driver.quit()

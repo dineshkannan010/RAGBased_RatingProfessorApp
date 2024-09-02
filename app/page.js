@@ -1,7 +1,26 @@
 'use client'
-import Image from "next/image";
-import { useState } from "react";
-import { Box, Stack, TextField, Button } from "@mui/material";
+import { useState, useEffect, useRef } from "react";
+import { Box, Stack, TextField, Button, Typography, ThemeProvider, createTheme } from "@mui/material";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+    background: {
+      default: '#121212',
+      paper: '#1e1e1e',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#b0b0b0',
+    },
+  },
+});
 
 export default function Home() {
   const [messages, setMessages]= useState([
@@ -11,6 +30,16 @@ export default function Home() {
     }
   ])
   const [message, setMessage]= useState('')
+
+  const messagesEndRef = useRef(null);
+  
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const sendMessage= async()=>{
     setMessages((messages)=>[
@@ -49,67 +78,83 @@ export default function Home() {
     })
   }
 
-  return (
-    <>
+    return (
+    <ThemeProvider theme={darkTheme}>
       <Box
-    width="100vw"
-    height="100vh"
-    display="flex"
-    flexDirection="column"
-    justifyContent="center"
-    alignItems="center"
-  >
-    <Stack
-      direction={'column'}
-      width="1200px"
-      height="700px"
-      border="1px solid black"
-      p={2}
-      spacing={3}
-    >
-      <Stack
-        direction={'column'}
-        spacing={2}
-        flexGrow={1}
-        overflow="auto"
-        maxHeight="100%"
+        width="100vw"
+        height="100vh"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        bgcolor="background.default"
+        color="text.primary"
       >
-        {messages.map((message, index) => (
-          <Box
-            key={index}
-            display="flex"
-            justifyContent={
-              message.role === 'assistant' ? 'flex-start' : 'flex-end'
-            }
+        <Stack
+          direction="column"
+          maxWidth="1200px"
+          maxHeight="600px"
+          width={{ xs: '90vw', sm: '80vw', md: '70vw', lg: '60vw', xl: '50vw' }}  // Responsive width settings
+          height={{ xs: '80vh', sm: '70vh', md: '60vh', lg: '60vh', xl: '60vh' }}  // Responsive height settings
+          bgcolor="background.paper"
+          borderRadius={2}
+          p={2}
+          spacing={3}
+          boxShadow={3}
+        >
+          <Stack
+            direction="column"
+            spacing={2}
+            flexGrow={1}
+            overflow="auto"
+            maxHeight="100%"
           >
-            <Box
-              bgcolor={
-                message.role === 'assistant'
-                  ? 'primary.main'
-                  : 'secondary.main'
-              }
-              color="white"
-              borderRadius={16}
-              p={3}
-            >
-              {message.content}
-            </Box>
-          </Box>
-        ))}
-      </Stack>
-      <Stack direction={'row'} spacing={2}>
-        <TextField
-          label="Message"
-          fullWidth
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <Button variant="contained" onClick={sendMessage}>
-          Send
-        </Button>
-      </Stack>
-    </Stack>
-  </Box>
-    </>
+            {messages.map((message, index) => (
+              <Box
+                key={index}
+                display="flex"
+                justifyContent={
+                  message.role === 'assistant' ? 'flex-start' : 'flex-end'
+                }
+              >
+                <Box
+                  bgcolor={
+                    message.role === 'assistant' ? 'primary.main' : 'secondary.main'
+                  }
+                  color="white"
+                  borderRadius={2}
+                  p={2}
+                  maxWidth="75%"
+                >
+                  <Typography variant="body1">
+                    {message.content}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+            {/* This div will be used to scroll into view */}
+            <div ref={messagesEndRef} />
+          </Stack>
+          <Stack direction="row" spacing={2}>
+            <TextField
+              label="Message"
+              fullWidth
+              variant="outlined"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              InputLabelProps={{
+                style: { color: '#b0b0b0' },
+              }}
+              InputProps={{
+                style: { color: 'white' },
+              }}
+            />
+            <Button variant="contained" color="primary" onClick={sendMessage}>
+              Send
+            </Button>
+          </Stack>
+        </Stack>
+      </Box>
+    </ThemeProvider>
   );
 }

@@ -1,0 +1,425 @@
+[
+    {
+        "name": "Lori Petrovich",
+        "department": "Science",
+        "school": "North Carolina State University",
+        "stars": "3.8",
+        "num_ratings": "243 ratings",
+        "would_take_again": "90%",
+        "difficulty": "3.5"
+    },
+    {
+        "name": "Leslie Kurtz",
+        "department": "Mathematics",
+        "school": "North Carolina State University",
+        "stars": "4.7",
+        "num_ratings": "199 ratings",
+        "would_take_again": "90%",
+        "difficulty": "3"
+    },
+    {
+        "name": "Elizabeth Dempster",
+        "department": "Mathematics",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "180 ratings",
+        "would_take_again": "97%",
+        "difficulty": "3.3"
+    },
+    {
+        "name": "Benoit Jacquet",
+        "department": "Biology",
+        "school": "North Carolina State University",
+        "stars": "3.3",
+        "num_ratings": "151 ratings",
+        "would_take_again": "68%",
+        "difficulty": "3.6"
+    },
+    {
+        "name": "Paul Maggard",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "144 ratings",
+        "would_take_again": "83%",
+        "difficulty": "4.3"
+    },
+    {
+        "name": "Travis Varner",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "4.9",
+        "num_ratings": "138 ratings",
+        "would_take_again": "100%",
+        "difficulty": "2.9"
+    },
+    {
+        "name": "Terry Gates",
+        "department": "Geology",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "124 ratings",
+        "would_take_again": "65%",
+        "difficulty": "3"
+    },
+    {
+        "name": "Lori Del Negro",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "1.9",
+        "num_ratings": "123 ratings",
+        "would_take_again": "22%",
+        "difficulty": "4.2"
+    },
+    {
+        "name": "Ghada Rabah",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "2.5",
+        "num_ratings": "101 ratings",
+        "would_take_again": "38%",
+        "difficulty": "4"
+    },
+    {
+        "name": "Marta Klesath",
+        "department": "Biology",
+        "school": "North Carolina State University",
+        "stars": "3.6",
+        "num_ratings": "85 ratings",
+        "would_take_again": "87%",
+        "difficulty": "3.4"
+    },
+    {
+        "name": "Erica Kosal",
+        "department": "Biology",
+        "school": "North Carolina State University",
+        "stars": "3.6",
+        "num_ratings": "83 ratings",
+        "would_take_again": "84%",
+        "difficulty": "3.2"
+    },
+    {
+        "name": "David Hyman",
+        "department": "Economics",
+        "school": "North Carolina State University",
+        "stars": "4.3",
+        "num_ratings": "76 ratings",
+        "would_take_again": "92%",
+        "difficulty": "2.1"
+    },
+    {
+        "name": "Jennifer Campbell",
+        "department": "Biology",
+        "school": "North Carolina State University",
+        "stars": "3.3",
+        "num_ratings": "75 ratings",
+        "would_take_again": "58%",
+        "difficulty": "3.5"
+    },
+    {
+        "name": "John Griggs",
+        "department": "Mathematics",
+        "school": "North Carolina State University",
+        "stars": "4.1",
+        "num_ratings": "74 ratings",
+        "would_take_again": "81%",
+        "difficulty": "3.1"
+    },
+    {
+        "name": "Christopher Halweg",
+        "department": "Genetics",
+        "school": "North Carolina State University",
+        "stars": "3.3",
+        "num_ratings": "69 ratings",
+        "would_take_again": "66%",
+        "difficulty": "4.4"
+    },
+    {
+        "name": "Brand Fortner",
+        "department": "Physics",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "65 ratings",
+        "would_take_again": "100%",
+        "difficulty": "4.3"
+    },
+    {
+        "name": "Wanda Lloyd",
+        "department": "English",
+        "school": "North Carolina State University",
+        "stars": "2.9",
+        "num_ratings": "62 ratings",
+        "would_take_again": "39%",
+        "difficulty": "4.3"
+    },
+    {
+        "name": "Bartley Danielsen",
+        "department": "Finance",
+        "school": "North Carolina State University",
+        "stars": "3.4",
+        "num_ratings": "61 ratings",
+        "would_take_again": "76%",
+        "difficulty": "3"
+    },
+    {
+        "name": "Debbera Carson",
+        "department": "Languages",
+        "school": "North Carolina State University",
+        "stars": "3.1",
+        "num_ratings": "58 ratings",
+        "would_take_again": "87%",
+        "difficulty": "2.9"
+    },
+    {
+        "name": "Dustin Heinen",
+        "department": "Classics",
+        "school": "North Carolina State University",
+        "stars": "2.9",
+        "num_ratings": "57 ratings",
+        "would_take_again": "61%",
+        "difficulty": "3.9"
+    },
+    {
+        "name": "Thomas Parker",
+        "department": "History",
+        "school": "North Carolina State University",
+        "stars": "3.1",
+        "num_ratings": "56 ratings",
+        "would_take_again": "71%",
+        "difficulty": "4"
+    },
+    {
+        "name": "James McConnell",
+        "department": "Languages",
+        "school": "North Carolina State University",
+        "stars": "3.4",
+        "num_ratings": "55 ratings",
+        "would_take_again": "52%",
+        "difficulty": "3.1"
+    },
+    {
+        "name": "Donavon Favre",
+        "department": "Business",
+        "school": "North Carolina State University",
+        "stars": "4.2",
+        "num_ratings": "54 ratings",
+        "would_take_again": "95%",
+        "difficulty": "2.7"
+    },
+    {
+        "name": "Jamey Widener",
+        "department": "Languages",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "51 ratings",
+        "would_take_again": "97%",
+        "difficulty": "2.9"
+    },
+    {
+        "name": "Walter Weare",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "2.0",
+        "num_ratings": "49 ratings",
+        "would_take_again": "25%",
+        "difficulty": "4.3"
+    },
+    {
+        "name": "Anita Croasmun",
+        "department": "Communication",
+        "school": "North Carolina State University",
+        "stars": "3.0",
+        "num_ratings": "47 ratings",
+        "would_take_again": "42%",
+        "difficulty": "3.4"
+    },
+    {
+        "name": "Katherine Morel",
+        "department": "Foreign Languages",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "46 ratings",
+        "would_take_again": "98%",
+        "difficulty": "3"
+    },
+    {
+        "name": "James Martin",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "2.0",
+        "num_ratings": "46 ratings",
+        "would_take_again": "34%",
+        "difficulty": "4.6"
+    },
+    {
+        "name": "Jag Kasichainula",
+        "department": "Engineering",
+        "school": "North Carolina State University",
+        "stars": "2.9",
+        "num_ratings": "43 ratings",
+        "would_take_again": "35%",
+        "difficulty": "2.4"
+    },
+    {
+        "name": "Mehmet Ozturk",
+        "department": "Engineering",
+        "school": "North Carolina State University",
+        "stars": "2.4",
+        "num_ratings": "43 ratings",
+        "would_take_again": "32%",
+        "difficulty": "3.7"
+    },
+    {
+        "name": "Elaine  Bohorquez",
+        "department": "Animal Science",
+        "school": "North Carolina State University",
+        "stars": "4.1",
+        "num_ratings": "41 ratings",
+        "would_take_again": "78%",
+        "difficulty": "4.9"
+    },
+    {
+        "name": "Matt Hettche",
+        "department": "Philosophy",
+        "school": "North Carolina State University",
+        "stars": "3.6",
+        "num_ratings": "41 ratings",
+        "would_take_again": "28%",
+        "difficulty": "3"
+    },
+    {
+        "name": "Paul Broyles",
+        "department": "English",
+        "school": "North Carolina State University",
+        "stars": "3.6",
+        "num_ratings": "40 ratings",
+        "would_take_again": "53%",
+        "difficulty": "3.8"
+    },
+    {
+        "name": "Ed Gehringer",
+        "department": "Engineering",
+        "school": "North Carolina State University",
+        "stars": "2.6",
+        "num_ratings": "39 ratings",
+        "would_take_again": "63%",
+        "difficulty": "3.9"
+    },
+    {
+        "name": "Daniel Graham",
+        "department": "Political Science",
+        "school": "North Carolina State University",
+        "stars": "4.6",
+        "num_ratings": "39 ratings",
+        "would_take_again": "86%",
+        "difficulty": "3.5"
+    },
+    {
+        "name": "Felix Castellano",
+        "department": "Chemistry",
+        "school": "North Carolina State University",
+        "stars": "2.8",
+        "num_ratings": "37 ratings",
+        "would_take_again": "80%",
+        "difficulty": "5"
+    },
+    {
+        "name": "David Ambaras",
+        "department": "History",
+        "school": "North Carolina State University",
+        "stars": "3.0",
+        "num_ratings": "37 ratings",
+        "would_take_again": "43%",
+        "difficulty": "4.2"
+    },
+    {
+        "name": "Paul Colby",
+        "department": "English",
+        "school": "North Carolina State University",
+        "stars": "2.9",
+        "num_ratings": "36 ratings",
+        "would_take_again": "15%",
+        "difficulty": "3.5"
+    },
+    {
+        "name": "Naji Husseini",
+        "department": "Biomedical Engineering",
+        "school": "North Carolina State University",
+        "stars": "4.9",
+        "num_ratings": "36 ratings",
+        "would_take_again": "97%",
+        "difficulty": "3.4"
+    },
+    {
+        "name": "Min Kang",
+        "department": "Mathematics",
+        "school": "North Carolina State University",
+        "stars": "4.8",
+        "num_ratings": "35 ratings",
+        "would_take_again": "100%",
+        "difficulty": "4.6"
+    },
+    {
+        "name": "Brian Blackley",
+        "department": "English",
+        "school": "North Carolina State University",
+        "stars": "4.0",
+        "num_ratings": "35 ratings",
+        "would_take_again": "80%",
+        "difficulty": "3.5"
+    },
+    {
+        "name": "Scott Ferguson",
+        "department": "Engineering",
+        "school": "North Carolina State University",
+        "stars": "4.0",
+        "num_ratings": "35 ratings",
+        "would_take_again": "87%",
+        "difficulty": "3.5"
+    },
+    {
+        "name": "Marcus Thompson",
+        "department": "Physical Education",
+        "school": "North Carolina State University",
+        "stars": "4.5",
+        "num_ratings": "33 ratings",
+        "would_take_again": "89%",
+        "difficulty": "3.3"
+    },
+    {
+        "name": "Keiko Ueda",
+        "department": "Languages",
+        "school": "North Carolina State University",
+        "stars": "4.6",
+        "num_ratings": "33 ratings",
+        "would_take_again": "100%",
+        "difficulty": "2.8"
+    },
+    {
+        "name": "Sarah Khan",
+        "department": "Business",
+        "school": "North Carolina State University",
+        "stars": "5.0",
+        "num_ratings": "33 ratings",
+        "would_take_again": "97%",
+        "difficulty": "3.4"
+    },
+    {
+        "name": "Irina Kogan",
+        "department": "Mathematics",
+        "school": "North Carolina State University",
+        "stars": "3.1",
+        "num_ratings": "33 ratings",
+        "would_take_again": "60%",
+        "difficulty": "4"
+    },
+    {
+        "name": "Bob Pond",
+        "department": "Psychology",
+        "school": "North Carolina State University",
+        "stars": "3.5",
+        "num_ratings": "32 ratings",
+        "would_take_again": "75%",
+        "difficulty": "2.6"
+    }
+]
