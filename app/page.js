@@ -41,6 +41,35 @@ export default function Home() {
     scrollToBottom();
   }, [messages]);
 
+  // Added fields for uploading review
+const [reviewData, setReviewData] = useState({
+  professor: '',
+  subject: '',
+  review: '',
+  stars: ''
+});
+
+const handleInputChange = (e) => {
+  setReviewData({ ...reviewData, [e.target.name]: e.target.value });
+};
+const submitReview = async () => {
+  const response = await fetch('/api/upsert_reviews', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(reviewData),
+  });
+
+  if (response.ok) {
+    console.log('Review successfully submitted!');
+    // Optionally reset the form after submission
+    setReviewData({ professor: '', subject: '', review: '', stars: '' });
+  } else {
+    console.error('Failed to submit the review.');
+  }
+};
+
   const sendMessage= async()=>{
     setMessages((messages)=>[
       ...messages, 
@@ -84,15 +113,56 @@ export default function Home() {
         width="100vw"
         height="100vh"
         display="flex"
-        flexDirection="column"
-        justifyContent="center"
+        flexDirection="row"
+        justifyContent="space-evenly"
         alignItems="center"
         bgcolor="background.default"
         color="text.primary"
       >
+        {/* Section to Submit New Review*/}
+        <Box marginRight={"10px"} >
+          <Typography justifyContent="center"
+          alignItems="center" 
+          sx={{fontSize:"20px"}}> Submit Review for Professor</Typography>
+            <Stack spacing={3}>
+              <TextField
+                label="Professor Name"
+                name="professor"
+                value={reviewData.professor}
+                onChange={handleInputChange}
+              />
+              <TextField
+                label="Subject"
+                name="subject"
+                value={reviewData.subject}
+                onChange={handleInputChange}
+              />
+              <TextField
+                label="Review"
+                name="review"
+                value={reviewData.review}
+                onChange={handleInputChange}
+                multiline
+              />
+              <TextField
+                label="Stars"
+                name="stars"
+                type="number"
+                value={reviewData.stars}
+                onChange={handleInputChange}
+              />
+              <Button variant="contained" onClick={submitReview}>
+                Submit Review
+              </Button>
+            </Stack>
+          </Box>
+        <Box >
+          <Typography justifyContent="center"
+        alignItems="center" 
+        sx={{fontSize:"20px"}}> Chat System</Typography>
         <Stack
           direction="column"
-          maxWidth="1200px"
+          maxWidth="800px"
           maxHeight="600px"
           width={{ xs: '90vw', sm: '80vw', md: '70vw', lg: '60vw', xl: '50vw' }}  // Responsive width settings
           height={{ xs: '80vh', sm: '70vh', md: '60vh', lg: '60vh', xl: '60vh' }}  // Responsive height settings
@@ -101,7 +171,7 @@ export default function Home() {
           p={2}
           spacing={3}
           boxShadow={3}
-        >
+        > 
           <Stack
             direction="column"
             spacing={2}
@@ -142,18 +212,14 @@ export default function Home() {
               variant="outlined"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              InputLabelProps={{
-                style: { color: '#b0b0b0' },
-              }}
-              InputProps={{
-                style: { color: 'white' },
-              }}
             />
             <Button variant="contained" color="primary" onClick={sendMessage}>
               Send
             </Button>
           </Stack>
         </Stack>
+        </Box>
+
       </Box>
     </ThemeProvider>
   );

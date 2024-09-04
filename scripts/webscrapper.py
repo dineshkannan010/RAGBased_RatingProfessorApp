@@ -14,7 +14,6 @@ options = FirefoxOptions()
 options.headless = True  # Run headless browser
 options.accept_insecure_certs = True  # Bypass SSL certificate errors
 
-# Setup Chrome driver
 driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
 url = "https://www.ratemyprofessors.com/search/professors/685?q=*"
 driver.get(url)
@@ -35,6 +34,22 @@ def load_all_professors():
             print(f"No more 'Show More' button found or error occurred: {e}")
             break
 
+# Function to scrape reviews from each professor's page
+def scrape_reviews(professor_link):
+    driver.get(professor_link)
+    time.sleep(3)  # Wait for the detailed page to load
+
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    reviews = []
+
+    # Extract reviews from the detailed page
+    review_elements = soup.find_all('div', class_='Comments__StyledComments-dzzyvm-0 gRjWel')
+    for review in review_elements:
+        review_text = review.text.strip()
+        reviews.append(review_text)
+    
+    return reviews
+
 def web_scrapping(url):
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     prof_cards = soup.find_all('a', class_='TeacherCard__StyledTeacherCard-syjs0d-0')
@@ -49,7 +64,14 @@ def web_scrapping(url):
             would_take_again = card.find('div', class_='CardFeedback__CardFeedbackNumber-lq6nix-2').text.strip()
             difficulty = card.find_all('div', class_='CardFeedback__CardFeedbackNumber-lq6nix-2')[1].text.strip()
 
-            # Add the professor details to the list
+            # Get the link to the professor's detailed page
+            prof_link = card['href']
+            full_prof_link = f"https://www.ratemyprofessors.com{prof_link}"
+            
+            # Scrape reviews from the professor's page
+            reviews = scrape_reviews(full_prof_link)
+            
+            # Add the professor details and reviews to the list
             all_professors.append({
                 "name": professor,
                 "department": subject,
@@ -57,8 +79,13 @@ def web_scrapping(url):
                 "stars": stars,
                 "num_ratings": num_ratings,
                 "would_take_again": would_take_again,
-                "difficulty": difficulty
+                "difficulty": difficulty,
+                "reviews": reviews
             })
+
+            # Go back to the main page after scraping the detailed page
+            driver.back()
+            time.sleep(2)  # Wait for the main page to reload
         except AttributeError as e:
             print(f"An element was not found. Skipping a professor card: {e}")
 
