@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from "react";
-import { Box, Stack, TextField, Button, Typography, ThemeProvider, createTheme } from "@mui/material";
+import { Box, Stack, TextField, Button, Typography, ThemeProvider, createTheme, Toolbar, AppBar } from "@mui/material";
 
 const darkTheme = createTheme({
   palette: {
@@ -108,7 +108,29 @@ const submitReview = async () => {
   }
 
     return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={darkTheme}>     
+      <AppBar position="fixed">
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "left",
+            paddingLeft:"120px"
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: "500",
+              color: "#F1B22A",
+            }}
+          >
+            AI based Professor Guide
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      
       <Box
         width="100vw"
         height="100vh"
@@ -118,44 +140,7 @@ const submitReview = async () => {
         alignItems="center"
         bgcolor="background.default"
         color="text.primary"
-      >
-        {/* Section to Submit New Review*/}
-        <Box marginRight={"10px"} >
-          <Typography justifyContent="center"
-          alignItems="center" 
-          sx={{fontSize:"20px"}}> Submit Review for Professor</Typography>
-            <Stack spacing={3}>
-              <TextField
-                label="Professor Name"
-                name="professor"
-                value={reviewData.professor}
-                onChange={handleInputChange}
-              />
-              <TextField
-                label="Subject"
-                name="subject"
-                value={reviewData.subject}
-                onChange={handleInputChange}
-              />
-              <TextField
-                label="Review"
-                name="review"
-                value={reviewData.review}
-                onChange={handleInputChange}
-                multiline
-              />
-              <TextField
-                label="Stars"
-                name="stars"
-                type="number"
-                value={reviewData.stars}
-                onChange={handleInputChange}
-              />
-              <Button variant="contained" onClick={submitReview}>
-                Submit Review
-              </Button>
-            </Stack>
-          </Box>
+      > 
         <Box >
           <Typography justifyContent="center"
         alignItems="center" 
@@ -219,6 +204,44 @@ const submitReview = async () => {
           </Stack>
         </Stack>
         </Box>
+
+                {/* Section to Submit New Review*/}
+                <Box marginRight={"10px"} >
+          <Typography justifyContent="center"
+          alignItems="center" 
+          sx={{fontSize:"30px"}}> Submit Review for Professor</Typography>
+            <Stack spacing={3}>
+              <TextField
+                label="Professor Name"
+                name="professor"
+                value={reviewData.professor}
+                onChange={handleInputChange}
+              />
+              <TextField
+                label="Subject"
+                name="subject"
+                value={reviewData.subject}
+                onChange={handleInputChange}
+              />
+              <TextField
+                label="Review"
+                name="review"
+                value={reviewData.review}
+                onChange={handleInputChange}
+                multiline
+              />
+              <TextField
+                label="Stars"
+                name="stars"
+                type="number"
+                value={reviewData.stars}
+                onChange={handleInputChange}
+              />
+              <Button variant="contained" onClick={submitReview}>
+                Submit Review
+              </Button>
+            </Stack>
+          </Box>
 
       </Box>
     </ThemeProvider>
